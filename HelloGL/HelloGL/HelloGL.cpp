@@ -2,11 +2,14 @@
 
 HelloGL::HelloGL(int argc, char* argv[])
 {
+	rotation = 0.0f;
+
 	GLUTCallbacks::Init(this);
 	glutInit(&argc, argv);
 	glutInitWindowSize(800, 800);
 	glutCreateWindow("Simple OpenGL Program");
 	glutDisplayFunc(GLUTCallbacks::Display);
+	glutTimerFunc(REFRESHRATE, GLUTCallbacks::Timer, REFRESHRATE);
 	glutMainLoop();
 }
 
@@ -17,8 +20,20 @@ void HelloGL::Display()
 	glFlush(); //flushes scene drawn to graphics card
 }
 
+void HelloGL::Update()
+{
+	rotation += 0.5f;
+	
+	if (rotation >= 360.0f)
+		rotation = 0.0f;
+
+	glutPostRedisplay();
+}
+
 void HelloGL::DrawPolygon()
 {
+	glPushMatrix();
+	glRotatef(rotation, 0.0f, 1.0f, 0.0f);
 	glBegin(GL_POLYGON);
 	{
 		glColor4f(1.0f, 0.0f, 0.0f, 0.0f);
@@ -32,7 +47,10 @@ void HelloGL::DrawPolygon()
 		glVertex2f(-0.3, -0.1);
 	}
 	glEnd();
+	glPopMatrix();
 
+	glPushMatrix();
+	glRotatef(rotation, 1.0f, 0.0f, 0.0f);
 	glBegin(GL_POLYGON); //starts to draw polygon
 	{
 		glColor4f(1.0f, 1.0f, 0.0f, 0.0f); //colours polygon
@@ -41,7 +59,10 @@ void HelloGL::DrawPolygon()
 		glVertex2f(-0.6, -0.5); //bottom right
 	}
 	glEnd(); //defines end of drawing polygon
+	glPopMatrix();
 
+	glPushMatrix();
+	glRotatef(rotation, 0.0f, 0.0f, 1.0f);
 	glBegin(GL_POLYGON); //starts to draw polygon
 	{
 		glColor4f(0.0f, 1.0f, 0.0f, 0.0f); //colours polygon
@@ -50,7 +71,10 @@ void HelloGL::DrawPolygon()
 		glVertex2f(0.90, 0.5); //bottom right
 	}
 	glEnd(); //defines end of drawing polygon
+	glPopMatrix();
 
+	glPushMatrix();
+	glRotatef(rotation, -1.0f, 1.0f, 0.0f);
 	glBegin(GL_POLYGON); //starts to draw polygon
 	{
 		glColor4f(0.0f, 0.0f, 1.0f, 0.0f); //colours polygon
@@ -59,6 +83,7 @@ void HelloGL::DrawPolygon()
 		glVertex2f(0.4, 0.3); //bottom right
 	}
 	glEnd(); //defines end of drawing polygon
+	glPopMatrix();
 	
 }
 
