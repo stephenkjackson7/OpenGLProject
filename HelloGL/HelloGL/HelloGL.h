@@ -6,6 +6,20 @@
 #include "GLUTCallbacks.h"
 #define REFRESHRATE 16 // 1000ms / 60 (fps) = 16
 
+struct Vector3
+{
+	float x;
+	float y;
+	float z;
+};
+
+struct Camera
+{
+	Vector3 eye;
+	Vector3 center;
+	Vector3 up;
+};
+
 class HelloGL
 {
 public:
@@ -22,6 +36,7 @@ public:
 	
 private:
 	float rotation;
+	Camera* camera;
 };
 
 
