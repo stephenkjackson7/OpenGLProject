@@ -1,2 +1,5 @@
-﻿  HelloGL.cpp
+﻿  GLUTCallbacks.cpp
+  HelloGL.cpp
+  main.cpp
+  Generating Code...
   HelloGL.vcxproj -> C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\Debug\HelloGL.exe
