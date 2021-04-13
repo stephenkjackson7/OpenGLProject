@@ -3,11 +3,10 @@
 
 HelloGL::HelloGL(int argc, char* argv[])
 {
-
+	Cube::Load((char*)"cube.txt");
 	for (int i = 0; i < 200; i++)
 	{
 		cube[i] = new Cube(((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
-		std::cout << "new cube created at " << cube[i] << std::endl;
 	}
 
 	camera = new Camera();
