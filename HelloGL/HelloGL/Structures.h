@@ -18,12 +18,24 @@ struct Camera
 
 struct Color
 {
-	GLfloat r, g, b;
+	GLfloat r;
+	GLfloat g;
+	GLfloat b;
 };
 
 struct Vertex
 {
-	GLfloat x, y, z;
+	GLfloat x;
+	GLfloat y;
+	GLfloat z;
+};
+
+struct Mesh
+{
+	Vertex* Vertices;
+	Color* Colors;
+	GLushort* Indices;
+	int VertexCount, ColorCount, IndexCount;
 };
 
 #endif

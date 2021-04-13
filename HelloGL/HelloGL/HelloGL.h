@@ -4,10 +4,11 @@
 #include <gl/GLU.h> //OpenGL utilities
 #include "GL\freeglut.h" //freeglut library
 #include "GLUTCallbacks.h"
-#include "Structures.h"
 #include "Cube.h"
-
-#define REFRESHRATE 16 // 1000ms / 60 (fps) = 16
+#include "Pyramid.h"
+#include "Structures.h"
+#include "MeshLoader.h"
+#include "Defines.h"
 
 class HelloGL
 {
@@ -21,10 +22,13 @@ public:
 	void Display();
 	void Update();
 	void Keyboard(unsigned char key, int x, int y);
+
+	void InitObjects();
+	void InitGL(int argc, char* argv[]);
 	
 private:
 	Camera* camera;
-	Cube* cube[200] = {};
+	SceneObject* objects[1000];
 };
 
 
