@@ -1,8 +1,5 @@
 #pragma once
-#include <Windows.h> //Required for OpenGL on windows
-#include <gl/GL.h> //OpenGL
-#include <gl/GLU.h> //OpenGL utilities
-#include "GL\freeglut.h" //freeglut library
+#include "Texture2D.h"
 #include "GLUTCallbacks.h"
 #include "Cube.h"
 #include "Pyramid.h"

@@ -49,14 +49,19 @@ void HelloGL::InitObjects()
 {
 	Mesh* cubeMesh = MeshLoader::Load((char*)"cube.txt"); // change to Load((char*)"cube.txt"); if error appears
 	Mesh* pyramidMesh = MeshLoader::Load((char*)"pyramid.txt");
+
+	Texture2D* texture = new Texture2D();
+	texture->Load((char*)"penguins.raw", 512, 512);
+
 	for (int i = 0; i < 500; i++)
 	{
-		objects[i] = new Cube(cubeMesh, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
+		objects[i] = new Cube(cubeMesh, texture, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
 	}
 	for (int i = 500; i < 1000; i++)
 	{
 		objects[i] = new Pyramid(pyramidMesh, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
 	}
+
 
 	camera = new Camera();
 	{
@@ -83,9 +88,10 @@ void HelloGL::InitGL(int argc, char* argv[])
 	//Set viewport to be entire window
 	glViewport(0, 0, 800, 800);
 	//Set correct perspective
-	gluPerspective(60, 1, 5, 500);
-	glEnable(GL_DEPTH_TEST);
+	gluPerspective(90, 1, 5, 500);
 	glMatrixMode(GL_MODELVIEW);
+	glEnable(GL_TEXTURE_2D); //texture will not load correctly w/o this
+	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
 	glCullFace(GL_BACK);
 }

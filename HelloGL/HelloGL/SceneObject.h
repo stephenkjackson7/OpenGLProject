@@ -6,11 +6,12 @@
 #include <gl/GLU.h>
 #include "GL\freeglut.h"
 #include "Structures.h"
+#include "Texture2D.h"
 
 class SceneObject
 {
 public:
-	SceneObject(Mesh* mesh);
+	SceneObject(Mesh* mesh, Texture2D* texture);
 	virtual ~SceneObject();
 
 	virtual void Update();
@@ -18,6 +19,7 @@ public:
 
 protected:
 	Mesh* _mesh;
+	Texture2D* _texture;
 };
 
 #endif

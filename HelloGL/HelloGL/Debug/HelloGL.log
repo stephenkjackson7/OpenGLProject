@@ -1,3 +1,3 @@
 ﻿  HelloGL.cpp
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\HelloGL.cpp(98,18): warning C4154: deletion of an array expression; conversion to pointer supplied
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\HelloGL.cpp(104,18): warning C4154: deletion of an array expression; conversion to pointer supplied
   HelloGL.vcxproj -> C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\Debug\HelloGL.exe
