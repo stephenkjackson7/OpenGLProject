@@ -3,6 +3,7 @@
 HelloGL::HelloGL(int argc, char* argv[])
 {
 	InitGL(argc, argv);
+	InitLighting();
 	InitObjects();
 	glutMainLoop();
 }
@@ -20,6 +21,11 @@ void HelloGL::Display()
 
 void HelloGL::Update()
 {
+	glLightfv(GL_LIGHT0, GL_AMBIENT, &(_lightData->Ambient.x));
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, &(_lightData->Diffuse.x));
+	glLightfv(GL_LIGHT0, GL_SPECULAR, &(_lightData->Specular.x));
+	glLightfv(GL_LIGHT0, GL_POSITION, &(_lightPosition->x));
+
 	for (int i = 0; i < 1000; i++)
 	{
 		objects[i]->Update();
@@ -48,19 +54,20 @@ void HelloGL::Keyboard(unsigned char key, int x, int y)
 void HelloGL::InitObjects()
 {
 	Mesh* cubeMesh = MeshLoader::Load((char*)"cube.txt"); // change to Load((char*)"cube.txt"); if error appears
-	Mesh* pyramidMesh = MeshLoader::Load((char*)"pyramid.txt");
+	//Mesh* pyramidMesh = MeshLoader::Load((char*)"pyramid.txt");
 
 	Texture2D* texture = new Texture2D();
 	texture->Load((char*)"penguins.raw", 512, 512);
 
-	for (int i = 0; i < 500; i++)
+	for (int i = 0; i < 1000; i++)
 	{
 		objects[i] = new Cube(cubeMesh, texture, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
 	}
-	for (int i = 500; i < 1000; i++)
+	/*for (int i = 500; i < 1000; i++)
 	{
 		objects[i] = new Pyramid(pyramidMesh, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
 	}
+	*/
 
 
 	camera = new Camera();
@@ -90,10 +97,44 @@ void HelloGL::InitGL(int argc, char* argv[])
 	//Set correct perspective
 	gluPerspective(90, 1, 5, 500);
 	glMatrixMode(GL_MODELVIEW);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
 	glEnable(GL_TEXTURE_2D); //texture will not load correctly w/o this
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
 	glCullFace(GL_BACK);
+}
+
+void HelloGL::InitLighting()
+{
+	_lightPosition = new Vector4();
+	_lightPosition->x = 0.0;
+	_lightPosition->y = 0.0;
+	_lightPosition->z = 1.0;
+	_lightPosition->w = 0.0;
+
+	_lightData = new Lighting();
+		//ambient
+	{
+		_lightData->Ambient.x = 0.2;
+		_lightData->Ambient.y = 0.2;
+		_lightData->Ambient.z = 0.2;
+		_lightData->Ambient.w = 1.0;
+	}
+		//diffuse
+	{
+		_lightData->Diffuse.x = 0.8;
+		_lightData->Diffuse.y = 0.8;
+		_lightData->Diffuse.z = 0.8;
+		_lightData->Diffuse.w = 1.0;
+	}
+		//specular
+	{
+		_lightData->Specular.x = 0.2;
+		_lightData->Specular.y = 0.2;
+		_lightData->Specular.z = 0.2;
+		_lightData->Specular.w = 1.0;
+	}
 }
 
 HelloGL::~HelloGL(void)

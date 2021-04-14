@@ -1,3 +1,24 @@
-﻿  HelloGL.cpp
-C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\HelloGL.cpp(104,18): warning C4154: deletion of an array expression; conversion to pointer supplied
+﻿  Cube.cpp
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\Cube.cpp(60,28): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\Cube.cpp(60,57): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\Cube.cpp(60,86): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\Cube.cpp(61,28): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\Cube.cpp(61,57): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\Cube.cpp(61,86): warning C4305: '=': truncation from 'double' to 'float'
+  GLUTCallbacks.cpp
+  HelloGL.cpp
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\HelloGL.cpp(119,30): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\HelloGL.cpp(120,30): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\HelloGL.cpp(121,30): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\HelloGL.cpp(126,30): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\HelloGL.cpp(127,30): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\HelloGL.cpp(128,30): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\HelloGL.cpp(133,31): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\HelloGL.cpp(134,31): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\HelloGL.cpp(135,31): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\HelloGL\HelloGL.cpp(145,18): warning C4154: deletion of an array expression; conversion to pointer supplied
+  MeshLoader.cpp
+  main.cpp
+  Generating Code...
+  LINK : C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\Debug\HelloGL.exe not found or not built by the last incremental link; performing full link
   HelloGL.vcxproj -> C:\Users\zanar\OneDrive - Staffordshire University\Courses\FOGGS\Semester 2\OpenGLProject\OpenGLProject\HelloGL\Debug\HelloGL.exe

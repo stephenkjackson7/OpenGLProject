@@ -11,10 +11,12 @@ public:
 
 	void Draw();
 	void Update();
+	void AddReflection();
 
 private:
 	Vector3 _position;
 	GLfloat _rotation;
+	Material* _material;
 	
 };
 
